@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/mainFragment"
+        android:title="List Coins"
+        android:icon="@drawable/ic_baseline_list_24" />
+
+    <item android:id="@+id/favFragment"
+        android:title="Saved Coins"
+        android:icon="@drawable/ic_baseline_favorite_24" />
+
+    <item android:id="@+id/searchFragment"
+        android:title="Search Coins"
+        android:icon="@drawable/ic_baseline_search_24" />
+
+    <item android:id="@+id/newsFragment"
+        android:title="News"
+        android:icon="@drawable/ic_baseline_news_24" />
+
+
+</menu>
