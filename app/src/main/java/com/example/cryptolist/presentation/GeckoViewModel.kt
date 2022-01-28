@@ -8,7 +8,7 @@ import com.example.cryptolist.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import java.lang.Exception
 
-class GeckoViewModel (private val repository: GeckoRepository) {
+class GeckoViewModel (private val repository: GeckoRepository): ViewModel() {
 
 
     fun fetchCoins() = liveData(Dispatchers.IO) {

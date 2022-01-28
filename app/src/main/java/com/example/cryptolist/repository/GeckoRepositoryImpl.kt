@@ -1,15 +1,18 @@
 package com.example.cryptolist.repository
 
 import com.example.cryptolist.data.models.CoinsResponse
+import com.example.cryptolist.data.remote.GeckoDataSource
 
-class GeckoRepositoryImpl: GeckoRepository {
+class GeckoRepositoryImpl(
+    private val dataSource: GeckoDataSource
+): GeckoRepository {
     override suspend fun getCoinsByMarketCap(
         page: Int,
         vs_currency: String,
         per_page: Int,
         price_change_percentage: String
     ): CoinsResponse {
-        TODO("Not yet implemented")
+        return dataSource.getCoinsList(page, vs_currency, per_page, price_change_percentage)
     }
 
     override suspend fun searchCoin(
@@ -18,6 +21,6 @@ class GeckoRepositoryImpl: GeckoRepository {
         per_page: Int,
         price_change_percentage: String
     ): CoinsResponse {
-        TODO("Not yet implemented")
+        return dataSource.searchCoins(searchQuery, vs_currency, per_page, price_change_percentage)
     }
 }
