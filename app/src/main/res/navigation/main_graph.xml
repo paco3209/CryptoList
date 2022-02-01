@@ -11,16 +11,17 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_favFragment"
-            app:destination="@id/favFragment" />
+            android:id="@+id/action_mainFragment_to_detailCoinFragment"
+            app:destination="@id/detailCoinFragment" />
     </fragment>
     <fragment
         android:id="@+id/favFragment"
         android:name="com.example.cryptolist.ui.FavFragment"
-        android:label="FavFragment" />
+        android:label="FavFragment" >
+        <action
+            android:id="@+id/action_favFragment_to_detailCoinFragment"
+            app:destination="@id/detailCoinFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.cryptolist.ui.NewsFragment"
@@ -28,5 +29,17 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.cryptolist.ui.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailCoinFragment"
+            app:destination="@id/detailCoinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailCoinFragment"
+        android:name="com.example.cryptolist.ui.DetailCoinFragment"
+        android:label="DetailCoinFragment" >
+        <argument
+            android:name="coin"
+            app:argType="com.example.cryptolist.data.models.CoinsItem" />
+    </fragment>
 </navigation>

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -90,7 +91,9 @@ class MainFragment : Fragment(R.layout.fragment_main), Adapter.OnCoinClickListen
     }
 
     override fun onCoinClick(coin: CoinsItem, position: Int) {
-        TODO("Not yet implemented")
+        val bundle = Bundle()
+        bundle.putParcelable("coinInfo",coin)
+        findNavController().navigate(R.id.action_mainFragment_to_detailCoinFragment,bundle)
     }
 
 
