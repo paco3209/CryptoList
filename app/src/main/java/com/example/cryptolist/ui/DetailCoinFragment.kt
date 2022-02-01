@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.cryptolist.R
 import com.example.cryptolist.data.models.CoinsItem
 import com.example.cryptolist.data.remote.GeckoDataSource
@@ -49,7 +50,28 @@ class DetailCoinFragment : Fragment(R.layout.fragment_detail_coin) {
 
         val coinInfo = args.coin
 
-        // falta detallar textview y info
+
+        Glide.with(requireContext())
+            .load(coinInfo?.image)
+            .centerCrop()
+            .into(binding.ivCoinImage)
+
+
+        //falta ajustar valores de importe y porcentajes
+        binding.txtCoinName.text = coinInfo?.name
+        binding.txtSymbol.text = "( " + coinInfo?.symbol + " )"
+        binding.txtCurrentPrice.text = "$ " + coinInfo?.current_price.toString()
+        binding.txtPriceChange24.text = "$ " + coinInfo?.price_change_24h.toString()
+        binding.txtMarketCap.text = "$ " + coinInfo?.market_cap.toString()
+        binding.txtCirculating.text = coinInfo?.circulating_supply.toString()
+        binding.txtHigh24.text = "$ " + coinInfo?.high_24h.toString()
+        binding.txtLow24.text = "$ " + coinInfo?.low_24h.toString()
+
+
+
+
+
+
 
     }
 }

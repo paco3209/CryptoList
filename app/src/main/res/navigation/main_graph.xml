@@ -40,6 +40,8 @@
         android:label="DetailCoinFragment" >
         <argument
             android:name="coin"
-            app:argType="com.example.cryptolist.data.models.CoinsItem" />
+            app:argType="com.example.cryptolist.data.models.CoinsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

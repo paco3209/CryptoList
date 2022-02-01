@@ -92,7 +92,7 @@ class MainFragment : Fragment(R.layout.fragment_main), Adapter.OnCoinClickListen
 
     override fun onCoinClick(coin: CoinsItem, position: Int) {
         val bundle = Bundle()
-        bundle.putParcelable("coinInfo",coin)
+        bundle.putParcelable("coin",coin)
         findNavController().navigate(R.id.action_mainFragment_to_detailCoinFragment,bundle)
     }
 
